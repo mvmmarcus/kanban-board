@@ -17,7 +17,7 @@ export default {
   },
   colors: {
     primary: "#FFFFFF",
-    secondary: "#000000"
+    secondary: "#000000",
   },
   spacings: {
     xxsmall: "0.8rem",
