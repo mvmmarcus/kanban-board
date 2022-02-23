@@ -6,6 +6,7 @@ export default {
     family: "Inter, sans-serif",
     normal: 400,
     medium: 500,
+    bold: 600,
     sizes: {
       xsmall: "1.2rem",
       small: "1.4rem",
@@ -13,6 +14,7 @@ export default {
       large: "1.8rem",
       xlarge: "2.0rem",
       xxlarge: "2.8rem",
+      huge: "5.2rem",
     },
   },
   colors: {
@@ -35,6 +37,7 @@ export default {
     large: "4.0rem",
     xlarge: "4.8rem",
     xxlarge: "5.6rem",
+    xxxlarge: "6.4rem",
   },
   transition: {
     default: "0.3s ease-in-out",
