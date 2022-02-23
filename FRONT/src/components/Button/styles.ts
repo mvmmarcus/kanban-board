@@ -6,9 +6,9 @@ export type WrapperProps = {
 
 const wrapperModifiers = {
   withIcon: (theme: DefaultTheme) => css`
-    svg {
-      width: 1.5rem;
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xsmall};
 
+    svg {
       & + span {
         margin-left: ${theme.spacings.xxsmall};
       }
@@ -40,7 +40,7 @@ export const Wrapper = styled.button<WrapperProps>`
     padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
 
     &:focus {
-      box-shadow: 0 0 0 2px ${theme.colors.secondary};
+      box-shadow: 0 0 0 0.2rem ${theme.colors.secondary};
     }
 
     &:hover {

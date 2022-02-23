@@ -4,7 +4,7 @@ import React, {
   ButtonHTMLAttributes,
 } from "react";
 
-import * as S from "./styles";
+import { Wrapper, WrapperProps } from "./styles";
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
@@ -15,14 +15,14 @@ export type ButtonProps = {
   as?: React.ElementType;
 } & ButtonTypes;
 
-const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
+const Button: React.ForwardRefRenderFunction<WrapperProps, ButtonProps> = (
   { children, icon, ...props },
   ref
 ) => (
-  <S.Wrapper hasIcon={!!icon} ref={ref} {...props}>
+  <Wrapper hasIcon={!!icon} ref={ref} {...props}>
     {icon}
     {!!children && <span>{children}</span>}
-  </S.Wrapper>
+  </Wrapper>
 );
 
 export default forwardRef(Button);
