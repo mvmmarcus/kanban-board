@@ -1,3 +1,7 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.main``;
+export const Wrapper = styled.main`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
