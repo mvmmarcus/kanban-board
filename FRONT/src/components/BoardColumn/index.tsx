@@ -68,6 +68,7 @@ const BoardColumn = ({
         </Heading>
         {showAddButton && (
           <Button
+            data-testid="add-card-button"
             onClick={toggleModal}
             icon={<MdAdd size={24} color={theme.colors.white} />}
           />
