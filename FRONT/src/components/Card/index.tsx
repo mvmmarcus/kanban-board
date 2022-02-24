@@ -41,7 +41,7 @@ const Card = ({
   id,
   title,
   content,
-  status = "toDo",
+  status,
   isEditing = false,
   isNewCard = false,
   onDelete,
@@ -116,11 +116,12 @@ const Card = ({
   };
 
   return (
-    <Wrapper status={status}>
+    <Wrapper data-testid="card-wrapper" status={status}>
       {isEditingCard ? (
         <>
           <Header>
             <TextField
+              data-testid="title-input"
               placeholder="Card title"
               initialValue={title}
               value={titleValue}
@@ -128,14 +129,18 @@ const Card = ({
             />
           </Header>
           <TextArea
+            data-testid="content-textarea"
             placeholder="Card content"
             value={cardContent}
             onChange={(event) => setCardContent(event.target.value)}
           />
 
           <Footer isNewCard={isNewCard}>
-            {!isNewCard && <MdCancel onClick={toggleEdit} />}
+            {!isNewCard && (
+              <MdCancel data-testid="arrow-cancel" onClick={toggleEdit} />
+            )}
             <MdCheckCircle
+              data-testid="arrow-check"
               onClick={() =>
                 handleCallAction({
                   action: isNewCard ? "add" : "edit",
@@ -154,12 +159,13 @@ const Card = ({
         <>
           <Header>
             <Title>{title}</Title>
-            <MdEdit onClick={toggleEdit} />
+            <MdEdit data-testid="edit-button" onClick={toggleEdit} />
           </Header>
           <Content>{content}</Content>
           <Footer>
             {status !== "toDo" && (
               <MdArrowBack
+                data-testid="arrow-back"
                 onClick={() =>
                   handleCallAction({
                     action: "moving",
@@ -176,6 +182,7 @@ const Card = ({
               />
             )}
             <MdDelete
+              data-testid="delete-button"
               onClick={() =>
                 handleCallAction({
                   action: "delete",
@@ -185,6 +192,7 @@ const Card = ({
             />
             {status !== "done" && (
               <MdArrowForward
+                data-testid="arrow-forward"
                 onClick={() =>
                   handleCallAction({
                     action: "moving",
