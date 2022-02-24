@@ -38,11 +38,13 @@ export const Header = styled.header`
   ${({ theme }) => css`
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: ${theme.spacings.xsmall};
 
     svg {
       cursor: pointer;
+      min-width: 1.8rem;
+      min-height: 1.8rem;
       width: 1.8rem;
       height: 1.8rem;
       color: ${theme.colors.black};
@@ -52,6 +54,9 @@ export const Header = styled.header`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
+    display: flex;
+    flex: 1;
+    word-break: break-all;
     color: ${theme.colors.black};
     font-weight: ${theme.font.normal};
     font-size: ${theme.font.sizes.xlarge};
