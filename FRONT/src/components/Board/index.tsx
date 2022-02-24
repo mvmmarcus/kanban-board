@@ -2,11 +2,11 @@ import React from "react";
 
 import { Wrapper } from "./styles";
 
-type BoardTypes = {
+export type BoardProps = {
   children?: React.ReactNode;
 };
 
-const Board = ({ children }: BoardTypes) => {
+const Board = ({ children }: BoardProps) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
