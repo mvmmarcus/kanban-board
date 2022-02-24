@@ -24,7 +24,14 @@ const GlobalStyles: GlobalStyleComponent<
       font-size: 62.5%;
     }
 
+    html,
+    body,
+    #root {
+      height: 100%;
+    }
+
     body {
+      background-color: ${theme.colors.mainBg};
       font-size: ${theme.font.sizes.medium};
       font-family: ${theme.font.family};
     }
