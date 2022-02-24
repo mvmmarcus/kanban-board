@@ -60,7 +60,7 @@ yarn storybook
 
 Open [http://localhost:6006](http://localhost:6006) with your browser to see components
 
-### [Storybook](https://avatar-cropper-mv.vercel.app/)
+### [Storybook](https://6216f335b04339003ad28526-fqraryrioc.chromatic.com/?path=/story/board--default)
 
 <br />
 
