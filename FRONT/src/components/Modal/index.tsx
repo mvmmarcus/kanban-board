@@ -11,7 +11,7 @@ export type ModalProps = {
   onClose?: () => void;
 };
 
-const Modal = ({ isOpen = false, title, children, onClose }: ModalProps) => {
+const Modal = ({ isOpen, title, children, onClose }: ModalProps) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
 
@@ -33,7 +33,7 @@ const Modal = ({ isOpen = false, title, children, onClose }: ModalProps) => {
       <Wrapper>
         <Header>
           <Title>{title}</Title>
-          <MdClose onClick={handleClose} />
+          <MdClose data-testid="close-button" onClick={handleClose} />
         </Header>
 
         {children}

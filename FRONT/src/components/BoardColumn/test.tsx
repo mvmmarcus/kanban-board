@@ -40,6 +40,13 @@ describe("<Board />", () => {
     expect(screen.getByText(/content test/i)).toBeInTheDocument();
     const addCardButton = screen.getByTestId("add-card-button");
     fireEvent.click(addCardButton);
+
+    const cardTitleInput = screen.getByTestId("title-input");
+    const cardContentTexarea = screen.getByTestId("content-textarea");
+
+    fireEvent.change(cardTitleInput, { target: { value: "test title" } });
+    fireEvent.change(cardContentTexarea, { target: { value: "test content" } });
+
     const saveButton = screen.getByTestId("arrow-check");
     await waitFor(() => {
       fireEvent.click(saveButton);
@@ -65,10 +72,12 @@ describe("<Board />", () => {
 
     const cardTitleInput = screen.getByTestId("title-input");
     const cardContentTexarea = screen.getByTestId("content-textarea");
-    const saveButton = screen.getByTestId("arrow-check");
 
     fireEvent.change(cardTitleInput, { target: { value: "test title" } });
     fireEvent.change(cardContentTexarea, { target: { value: "test content" } });
+
+    const saveButton = screen.getByTestId("arrow-check");
+
     await waitFor(() => {
       fireEvent.click(saveButton);
     });

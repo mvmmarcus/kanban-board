@@ -13,6 +13,7 @@ module.exports = {
     "!src/Routes.tsx",
     "!src/pages/**",
     "!src/services/**",
+    "!src/utils/**",
   ],
   setupFilesAfterEnv: ["<rootDir>/.jest/setup.ts"],
   modulePaths: ["<rootDir>/src/"],

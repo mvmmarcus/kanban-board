@@ -122,7 +122,7 @@ const Card = ({
           <Header>
             <TextField
               data-testid="title-input"
-              placeholder="Card title"
+              placeholder="Card title*"
               initialValue={title}
               value={titleValue}
               onInputChange={setTitleValue}
@@ -130,7 +130,7 @@ const Card = ({
           </Header>
           <TextArea
             data-testid="content-textarea"
-            placeholder="Card content"
+            placeholder="Card content*"
             value={cardContent}
             onChange={(event) => setCardContent(event.target.value)}
           />
@@ -139,20 +139,23 @@ const Card = ({
             {!isNewCard && (
               <MdCancel data-testid="arrow-cancel" onClick={toggleEdit} />
             )}
-            <MdCheckCircle
-              data-testid="arrow-check"
-              onClick={() =>
-                handleCallAction({
-                  action: isNewCard ? "add" : "edit",
-                  card: {
-                    id,
-                    titulo: titleValue,
-                    conteudo: cardContent,
-                    lista: formatCardStatus(status),
-                  },
-                })
-              }
-            />
+
+            {!!titleValue && !!cardContent && (
+              <MdCheckCircle
+                data-testid="arrow-check"
+                onClick={() =>
+                  handleCallAction({
+                    action: isNewCard ? "add" : "edit",
+                    card: {
+                      id,
+                      titulo: titleValue,
+                      conteudo: cardContent,
+                      lista: formatCardStatus(status),
+                    },
+                  })
+                }
+              />
+            )}
           </Footer>
         </>
       ) : (
